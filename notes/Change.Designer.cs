@@ -30,12 +30,12 @@
         {
             this.save = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.textTextBox = new System.Windows.Forms.TextBox();
+            this.hourTextBox = new System.Windows.Forms.TextBox();
+            this.minuetsTextBox = new System.Windows.Forms.TextBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.notifyAheadComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // save
@@ -46,6 +46,7 @@
             this.save.TabIndex = 0;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // close
             // 
@@ -57,62 +58,67 @@
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 26);
-            this.textBox1.TabIndex = 2;
+            this.nameTextBox.Location = new System.Drawing.Point(12, 12);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(280, 26);
+            this.nameTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // textTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 63);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 207);
-            this.textBox2.TabIndex = 3;
+            this.textTextBox.Location = new System.Drawing.Point(13, 63);
+            this.textTextBox.Multiline = true;
+            this.textTextBox.Name = "textTextBox";
+            this.textTextBox.Size = new System.Drawing.Size(278, 207);
+            this.textTextBox.TabIndex = 3;
             // 
-            // textBox3
+            // hourTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(56, 291);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(24, 26);
-            this.textBox3.TabIndex = 4;
+            this.hourTextBox.Location = new System.Drawing.Point(56, 291);
+            this.hourTextBox.Name = "hourTextBox";
+            this.hourTextBox.Size = new System.Drawing.Size(24, 26);
+            this.hourTextBox.TabIndex = 4;
             // 
-            // textBox4
+            // minuetsTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(86, 291);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(24, 26);
-            this.textBox4.TabIndex = 5;
+            this.minuetsTextBox.Location = new System.Drawing.Point(86, 291);
+            this.minuetsTextBox.Name = "minuetsTextBox";
+            this.minuetsTextBox.Size = new System.Drawing.Size(24, 26);
+            this.minuetsTextBox.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 291);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 26);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker.Location = new System.Drawing.Point(116, 291);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(175, 26);
+            this.dateTimePicker.TabIndex = 6;
             // 
-            // comboBox1
+            // notifyAheadComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(224, 323);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 28);
-            this.comboBox1.TabIndex = 7;
-            
+            this.notifyAheadComboBox.FormattingEnabled = true;
+            this.notifyAheadComboBox.Items.AddRange(new object[] {
+            1,
+            5,
+            10,
+            15,
+            30});
+            this.notifyAheadComboBox.Location = new System.Drawing.Point(224, 323);
+            this.notifyAheadComboBox.Name = "notifyAheadComboBox";
+            this.notifyAheadComboBox.Size = new System.Drawing.Size(67, 28);
+            this.notifyAheadComboBox.TabIndex = 7;
             // 
             // Change
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 422);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.notifyAheadComboBox);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.minuetsTextBox);
+            this.Controls.Add(this.hourTextBox);
+            this.Controls.Add(this.textTextBox);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.close);
             this.Controls.Add(this.save);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -128,11 +134,11 @@
 
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button close;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox textTextBox;
+        private System.Windows.Forms.TextBox hourTextBox;
+        private System.Windows.Forms.TextBox minuetsTextBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.ComboBox notifyAheadComboBox;
     }
 }

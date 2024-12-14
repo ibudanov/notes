@@ -28,7 +28,7 @@ namespace notes
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent(DateTime curerent)
+        private void InitializeComponent()
         {
             
 
@@ -85,7 +85,7 @@ namespace notes
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(31, 26);
             this.textBox3.TabIndex = 4;
-            this.textBox3.Text = curerent.Hour.ToString();
+            
             // 
             // textBox4
             // 
@@ -93,7 +93,7 @@ namespace notes
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(31, 26);
             this.textBox4.TabIndex = 5;
-            this.textBox4.Text = curerent.Minute.ToString();
+            
             // 
             // dateTimePicker1
             // 

@@ -21,6 +21,7 @@ namespace notes
         private String text;
         private int notifyAhead;
         private DateTime dateTime;
+        public Point changerLocation;
 
 
         public Sticker(String name, String text, Color color, DateTime dateTime, int notifyAhead)
@@ -36,6 +37,9 @@ namespace notes
             this.button1.BackColor = color;
             this.button2.BackColor = color;
             this.BackColor = color;
+
+            this.changerLocation = this.Location;
+            this.changerLocation.Offset(this.button1.Location);
 
             this.timer1.Start();
 
@@ -128,8 +132,10 @@ namespace notes
         }
         public void updateNotificationTime() 
         {
-            this.ts = new TimeSpan(0, notifyAhead, 0);
+            this.ts = new TimeSpan(0, this.notifyAhead, 0);
             this.timeOfNotification = this.dateTime - this.ts;
+            timer1.Start();
         }
+        
     }
 }
